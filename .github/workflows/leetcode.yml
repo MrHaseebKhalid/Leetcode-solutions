@@ -3,7 +3,7 @@ name: Sync Leetcode
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 8 * * *' # Runs automatically every day at 8:00 AM UTC
+    - cron: '0 8 * * *'
 
 jobs:
   build:
@@ -14,5 +14,5 @@ jobs:
         uses: joshcai/leetcode-sync@v1.7
         with:
           github-token: ${{ secrets.LEETCODE_REPO_TOKEN }}
-          leetcode-username: ${{ secrets.LEETCODE_USERNAME }}
-          leetcode-password: ${{ secrets.LEETCODE_PASSWORD }}
+          leetcode-csrf-token: ${{ secrets.LEETCODE_CSRF_TOKEN }}
+          leetcode-session: ${{ secrets.LEETCODE_SESSION }}
